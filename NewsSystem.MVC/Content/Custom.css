@@ -1,0 +1,60 @@
+﻿@import url('../fonts/Vazir/vazir.css');
+@import url('font-awesome.css');
+
+body {
+    direction: rtl;
+    font-family: Vazir;
+    padding-bottom: 50px;
+}
+.media-content .attachments-browser {
+    border: solid 2px #ccc;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.media-content .attachments-browser a {
+    padding: 5px;
+    margin: 8px;
+}
+
+.media-content .media-content-thumbnail {
+    width: 100%;
+    padding-top: 30px;
+}
+
+.media-content .media-content-thumbnail .gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: right;
+    width: 180px;
+}
+
+.media-content .media-content-thumbnail .gallery:hover {
+    border: 1px solid #777;
+}
+
+.media-content .media-content-thumbnail .gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.media-content .media-content-thumbnail .gallery .desc {
+    padding: 0px 15px 15px 15px;
+    text-align: center;
+}
+
+.media-content .media-content-thumbnail .gallery .oper {
+    padding: 0px 15px 15px 15px;
+    text-align: center;
+}
+@media(min-width: 768px) and (max-width: 991px) {
+    .attachments-browser form {
+        display: none;
+    }
+}
+
+@media(max-width: 767px) {
+    .attachments-browser form {
+        display:none;
+    }
+}

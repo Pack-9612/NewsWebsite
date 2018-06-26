@@ -1,0 +1,55 @@
+﻿@model NewsSystem.MVC.ViewModels.AddViewModel
+
+@{
+    ViewBag.Title = "افزودن تصویر";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="panel panel-body" style="min-height:256px; padding-top: 50px;">
+
+    <div class="col-md-3"></div>
+    <div class="col-md-9">
+        <div class="col-md-5">
+            @using (Html.BeginForm("Add", "File", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data", style = "padding:20px;" }))
+            {
+                @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+
+                @*<div class="form-group">
+                    @Html.LabelFor(model => model.MediaLibraryId, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(x => x.MediaLibraryId, null,
+                                new { @class = "form-control" })
+
+                        @Html.ValidationMessageFor(x => x.MediaLibraryId, null, new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "عنوان" })
+                        @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
+                    </div> 
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.FilePath, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(x => x.FilePath, new { type = "file", @class = "form-control btn btn-primary" })
+                        @Html.ValidationMessageFor(x => x.FilePath, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success pull-left" type="submit">
+                        افزودن تصویر
+                    </button>
+                </div>
+
+            }
+        </div>
+        <div class="col-md-4" style="width:300px; margin:20px; text-align: center">
+            @*<img src="@Model.FilePath" class="img-rounded" />*@
+        </div>
+    </div>
+
+
+</div>

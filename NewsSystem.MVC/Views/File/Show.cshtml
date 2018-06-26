@@ -1,0 +1,44 @@
+﻿@model IEnumerable<NewsSystem.Models.MediaFile>
+
+@{
+    ViewBag.Title = "فهرست فایل ها";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<div class="panel panel-body" style="min-height:256px; padding-top: 150px;">
+
+    <div class="col-md-3"></div>
+    
+        <div class="media-content col-md-9 ">
+            <div class="attachments-browser " style="background-color: #eee">
+                <a href="@Url.Action("Add", "File" , new { id = "null" })" class="btn btn-primary  btn-sm">افزودن فایل جدید</a>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <button type="submit" class="btn btn-default fa fa-search form-control"></button>
+                    </div>
+                </form>
+            </div>
+            <div class="media-content-thumbnail">
+                @foreach (var item in Model)
+                {
+
+                    <div class="gallery">
+                        <a target="_blank" href="#">
+                            <img src="@item.FilePath" class="img-rounded" width="300" height="200" />
+                        </a>
+                        <hr />
+                        <div class="desc">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </div>
+                        <div class="oper">
+                            <a href="@Url.Action("Edit", "File" , new { id = "item.Id" })" class="fa fa-edit"></a> |
+                            <a href="@Url.Action("Show", "File" , new { id = "item.Id" })" class="fa fa-file"></a> |
+                            <a href="@Url.Action("Delete", "File" , new { id = "item.Id" })" class="fa fa-remove"></a>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+</div>
+
