@@ -46,7 +46,7 @@ namespace NewsSystem.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var fileName = $"{DateTime.Now.ToString("yymmssfff")}{extension}";
-                var fullPath = Path.Combine(Server.MapPath("~/Image/Thumbnail"), fileName);
+                var fullPath = Path.Combine(Server.MapPath("~/Images/Thumbnails"), fileName);
                 addModel.FilePath.SaveAs(fullPath);
                 var ImagesClientPath = $"/Images/thumbnails/{fileName}";
 
