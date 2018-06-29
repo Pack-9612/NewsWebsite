@@ -11,6 +11,7 @@ namespace NewsSystem.MVC.Controllers
         // GET: Events
         public ActionResult Event()
         {
+
             return View();
         }
     }
